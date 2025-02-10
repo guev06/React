@@ -10,12 +10,22 @@ function UserList(props){
 })}
   </ul>
 }
+
+function ProductList(props){
+  console.log(props.products)
+  return <ul>
+    {props.products.map((item,index)=>{
+      return <li key={index}>{item.id} {item.name} {item.email}</li>
+    })}
+  </ul>
+}
 function App() {
   const myList =[{id:1, name:"name", email:"lala@gmail.com"}]
-
+  const myList2 =[{id:1, name:"name", email:"name@gmail.com"}]
   return (
     <div className="App">
       <UserList UserList={myList}></UserList>
+      <ProductList products={myList2}></ProductList>
     </div>
     
   );
